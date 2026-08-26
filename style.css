@@ -145,6 +145,16 @@ img {
   margin: 0 auto;
 }
 
+.row__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no-cursor {
+  cursor: not-allowed;
+}
+
 /* HIGHLIGHTS */
 
 #highlights {
@@ -157,7 +167,7 @@ img {
   z-index: 2;
 }
 
-#highlights:before #highlights:after {
+#highlights:before {
   background: url("assets/wave.svg");
   content: "";
   position: absolute;
@@ -167,14 +177,20 @@ img {
   z-index: 1;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-#highlights:before {
   top: 1px;
   transform: translateY(-100%);
 }
 
 #highlights:after {
+  background: url("assets/wave.svg");
+  content: "";
+  position: absolute;
+  width: 101vw;
+  height: 12vw;
+  left: 0;
+  z-index: 1;
+  background-size: cover;
+  background-repeat: no-repeat;
   bottom: 1px;
   transform: translateY(100%) rotate(180deg);
 }
@@ -218,6 +234,59 @@ img {
 /* FEATURES */
 
 #features {
-  height: 100px;
+  padding-top: 8vw;
   background-color: rgba(115, 66, 214, 0.1);
 }
+
+.books {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book {
+  width: 25%;
+  padding: 25px;
+}
+
+.book__img {
+  width: 250px;
+  height: 350px;
+  transition: all 300ms ease;
+  cursor: no-drop;
+}
+
+.book__img--wrapper {
+  margin-bottom: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+
+.book:hover .book__img {
+  transform: scale(1.03);
+}
+
+.book__title {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.book__title:hover {
+  text-decoration: underline;
+  cursor: no-drop;
+}
+
+.book__ratings {
+  margin-bottom: 8px;
+  color: #fabf2a;
+}
+
+.book__price--normal {
+  text-decoration: line-through;
+  padding-right: 6px;
+  color: #bfbfbf;
+}
+
+
+
+
